@@ -1,0 +1,718 @@
+/*
+	HTML5 Reset :: style.css
+	----------------------------------------------------------
+	We have learned much from/been inspired by/taken code where offered from:
+	
+	Eric Meyer					:: http://meyerweb.com
+	HTML5 Doctor				:: http://html5doctor.com
+	and the HTML5 Boilerplate	:: http://html5boilerplate.com
+	
+-------------------------------------------------------------------------------*/
+
+/* Let's default this puppy out
+-------------------------------------------------------------------------------*/
+
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font-weight: normal;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+article, aside, figure, footer, header, nav, section, details, summary {display: block;}
+
+/* Handle box-sizing while better addressing child elements: 
+   http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+html {
+	box-sizing: border-box;
+}
+
+*, 
+*:before, 
+*:after {
+	box-sizing: inherit;
+}
+
+/* consider resetting the default cursor: https://gist.github.com/murtaugh/5247154 */
+
+/* Responsive images and other embedded objects
+   Note: keeping IMG here will cause problems if you're using foreground images as sprites.
+   If this default setting for images is causing issues, you might want to replace it with a .responsive class instead. */
+img,
+object,
+embed {max-width: 100%;}
+
+/* force a vertical scrollbar to prevent a jumpy page */
+html {overflow-y: scroll;}
+
+/* we use a lot of ULs that aren't bulleted. 
+	don't forget to restore the bullets within content. */
+ul {list-style: none;}
+
+blockquote, q {quotes: none;}
+
+blockquote:before, 
+blockquote:after, 
+q:before, 
+q:after {content: ''; content: none;}
+
+a {margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent;}
+
+del {text-decoration: line-through;}
+
+abbr[title], dfn[title] {border-bottom: 1px dotted #000; cursor: help;}
+
+/* tables still need cellspacing="0" in the markup */
+table {border-collapse: collapse; border-spacing: 0;}
+th {font-weight: bold; vertical-align: bottom;}
+td {font-weight: normal; vertical-align: top;}
+
+hr {display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0;}
+
+input, select {vertical-align: middle;}
+
+pre {
+    white-space: pre; /* CSS2 */
+    white-space: pre-wrap; /* CSS 2.1 */
+    white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
+    word-wrap: break-word; /* IE */
+}
+
+input[type="radio"] {vertical-align: text-bottom;}
+input[type="checkbox"] {vertical-align: bottom;}
+.ie7 input[type="checkbox"] {vertical-align: baseline;}
+.ie6 input {vertical-align: text-bottom;}
+
+select, input, textarea {font: 99% sans-serif;}
+
+table {font-size: inherit; font: 100%;}
+
+small {font-size: 85%;}
+
+strong {font-weight: bold;}
+
+td, td img {vertical-align: top;} 
+
+/* Make sure sup and sub don't mess with your line-heights http://gist.github.com/413930 */
+sub, sup {font-size: 75%; line-height: 0; position: relative;}
+sup {top: -0.5em;}
+sub {bottom: -0.25em;}
+
+/* standardize any monospaced elements */
+pre, code, kbd, samp {font-family: monospace, sans-serif;}
+
+/* hand cursor on clickable elements */
+.clickable,
+label, 
+input[type=button], 
+input[type=submit], 
+input[type=file], 
+button {cursor: pointer;}
+
+/* Webkit browsers add a 2px margin outside the chrome of form elements */
+button, input, select, textarea {margin: 0;}
+
+/* make buttons play nice in IE */
+button,
+input[type=button] {width: auto; overflow: visible;}
+ 
+/* scale images in IE7 more attractively */
+.ie7 img {-ms-interpolation-mode: bicubic;}
+
+/* prevent BG image flicker upon hover 
+   (commented out as usage is rare, and the filter syntax messes with some pre-processors)
+.ie6 html {filter: expression(document.execCommand("BackgroundImageCache", false, true));}
+*/
+
+/* let's clear some floats */
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }  
+.clearfix:after { clear: both; }  
+.clearfix { zoom: 1; }  
+/* End of reset css */
+
+/**
+ * fullPage 2.4.6
+ * https://github.com/alvarotrigo/fullPage.js
+ * MIT licensed
+ *
+ * Copyright (C) 2013 alvarotrigo.com - A project by Alvaro Trigo
+ */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow:hidden;
+
+    /*Avoid flicker on slides transitions for mobile phones #336 */
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+#superContainer {
+    height: 100%;
+    position: relative;
+
+    /* Touch detection for Windows 8 */
+    -ms-touch-action: none;
+
+    /* IE 11 on Windows Phone 8.1*/
+    touch-action: none;
+}
+.fp-section {
+    position: relative;
+    -webkit-box-sizing: border-box; /* Safari<=5 Android<=3 */
+    -moz-box-sizing: border-box; /* <=28 */
+    box-sizing: border-box;
+}
+.fp-slide {
+    float: left;
+}
+.fp-slide, .fp-slidesContainer {
+    height: 100%;
+    display: block;
+}
+.fp-slides {
+    z-index:1;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    -webkit-transition: all 0.3s ease-out; /* Safari<=6 Android<=4.3 */
+    transition: all 0.3s ease-out;
+}
+.fp-section.fp-table, .fp-slide.fp-table {
+    display: table;
+    table-layout:fixed;
+    width: 100%;
+}
+.fp-tableCell {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    height: 100%;
+}
+.fp-slidesContainer {
+    float: left;
+    position: relative;
+}
+.fp-controlArrow {
+    position: absolute;
+    z-index: 4;
+    top: 50%;
+    cursor: pointer;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    margin-top: -38px;
+}
+.fp-controlArrow.fp-prev {
+    left: 15px;
+    width: 0;
+    border-width: 38.5px 34px 38.5px 0;
+    border-color: transparent #fff transparent transparent;
+}
+.fp-controlArrow.fp-next {
+    right: 15px;
+    border-width: 38.5px 0 38.5px 34px;
+    border-color: transparent transparent transparent #fff;
+}
+.fp-scrollable {
+    overflow: scroll;
+
+}
+.fp-notransition {
+    -webkit-transition: none !important;
+    transition: none !important;
+}
+#fp-nav {
+    position: fixed;
+    z-index: 100;
+    margin-top: -32px;
+    top: 50%;
+    opacity: 1;
+}
+#fp-nav.right {
+    right: 17px;
+}
+#fp-nav.left {
+    left: 17px;
+}
+.fp-slidesNav{
+    position: absolute;
+    z-index: 4;
+    left: 50%;
+    opacity: 1;
+}
+.fp-slidesNav.bottom {
+    bottom: 17px;
+}
+.fp-slidesNav.top {
+    top: 17px;
+}
+#fp-nav ul,
+.fp-slidesNav ul {
+  margin: 0;
+  padding: 0;
+}
+#fp-nav ul li,
+.fp-slidesNav ul li {
+    display: block;
+    width: 14px;
+    height: 13px;
+    margin: 7px;
+    position:relative;
+}
+.fp-slidesNav ul li {
+    display: inline-block;
+}
+#fp-nav ul li a,
+.fp-slidesNav ul li a {
+    display: block;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    text-decoration: none;
+}
+#fp-nav ul li a.active span,
+.fp-slidesNav ul li a.active span {
+    background: #333;
+}
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span {
+    top: 2px;
+    left: 2px;
+    width: 8px;
+    height: 8px;
+    border: 1px solid #000;
+    background: rgba(0, 0, 0, 0);
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+}
+#fp-nav ul li .fp-tooltip {
+    position: absolute;
+    top: -2px;
+    color: #fff;
+    font-size: 14px;
+    font-family: arial, helvetica, sans-serif;
+    white-space: nowrap;
+    max-width: 220px;
+    overflow: hidden;
+    display: block;
+    opacity: 0;
+    width: 0;
+}
+#fp-nav ul li:hover .fp-tooltip {
+    -webkit-transition: opacity 0.2s ease-in;
+    transition: opacity 0.2s ease-in;
+    width: auto;
+    opacity: 1;
+}
+#fp-nav ul li .fp-tooltip.right {
+    right: 20px;
+}
+#fp-nav ul li .fp-tooltip.left {
+    left: 20px;
+}
+/* End of Full-page css */
+
+/**
+ * AnySlider 2.0.0
+ * http://jwilsson.github.io/AnySlider/
+ */
+/* Bare minimum styles */
+.slider {
+    -ms-touch-action: pan-y; /* Prevent default touch actions on Windows 8. Only required for IE10 */
+    overflow: auto; /* Not required but recommended for accessibility when JavaScript is turned off */
+    position: relative;
+    touch-action: pan-y; /* Prevent default touch actions on Windows 8. Supported in IE11+ */
+}
+
+/* AnySlider can be styled to your liking. This is just example styles */
+.slider {
+    border: 1px dotted #333;
+    height: 225px;
+    margin: 40px auto;
+    padding: 5px;
+    text-align: center;
+    width: 50%;
+    background-color: white;
+    border-radius: 1em;
+}
+
+/* The arrows can of course also be styled to your liking. This is just example styles */
+.as-prev-arrow, .as-next-arrow {
+    background: url(../img/arrows.png) no-repeat;
+    cursor: pointer;
+    filter: alpha(opacity=0);
+    height: 40px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    text-indent: 100%;
+    top: 95px;
+    white-space: nowrap;
+    width: 40px;
+    z-index: 1;
+}
+
+.as-prev-arrow {
+    left: 0;
+}
+
+.as-next-arrow {
+    background-position: -40px 0;
+    right: 0;
+}
+
+.slider:hover .as-prev-arrow, .slider:hover .as-next-arrow {
+    filter: alpha(opacity=1);
+    opacity: 1;
+}
+
+/* The same rules for styling apply here. Style to your liking */
+.as-nav {
+    bottom: 280px;
+    left: 50%;
+    margin-left: -27px;
+    position: absolute;
+    text-align: left;
+    width: 72px; /* 16px per bullet + 2px margin per bullet (scott boyle) */
+    z-index: 1;
+}
+
+.as-nav a {
+    background: url(../img/bullets.png) no-repeat;
+    height: 16px;
+    display: inline-block;
+    margin: 0 1px;
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+    width: 16px;
+}
+
+a.as-active, .as-nav a:hover {
+    background-position: 0 -16px;
+}
+/* End of AnySlider css */
+
+
+
+@font-face{font-family: 'fatalitys_edge';
+  src: url('../fonts/fatalitys_edge.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+       url('../fonts/fatalitys_edge.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
+@font-face{font-family: 'leap_of_faith';
+  src: url('../fonts/leap_of_faith.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+       url('../fonts/leap_of_faith.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
+
+
+/* A Linux- and Windows-friendly sans-serif font stack: http://prospects.mhurrell.co.uk/post/updating-the-helvetica-font-stack */
+body{
+    font: 13px Helmet, Freesans, sans-serif;
+}
+
+body, select, input, textarea{
+    color: #333;
+}
+
+a{
+    color: #03f;
+}
+a:hover{
+    color: #69f;
+}
+/* Custom text-selection colors (remove any text shadows: http://twitter.com/miketaylr/status/12228805301) */
+::-moz-selection{
+    background: #ff0000; 
+    color: #fff; 
+    text-shadow: none;
+}
+::selection{
+    background: #ff0000; 
+    color: #fff; 
+    text-shadow: none;
+} 
+/*	j.mp/webkit-tap-highlight-color  */
+a:link{
+    -webkit-tap-highlight-color: #ff0000;
+}
+ins{
+    background-color: #ff0000; 
+    color: #000; 
+    text-decoration: none;
+}
+mark{
+    background-color: #ff0000; 
+    color: #000; 
+    font-style: italic; 
+    font-weight: bold;
+}
+
+/* Mozilla dosen't style place holders by default */
+input:-moz-placeholder{ 
+    color:#a9a9a9; 
+}
+textarea:-moz-placeholder{ 
+    color:#a9a9a9; 
+}
+/* Custom styles
+ * --------------------------------------- */
+
+h2{
+    font-family: "leap_of_faith", serif;
+    color: red;
+}
+h3{
+    font-family: "fatalitys_edge", "Lucida Grande", sans-serif;
+    color: white;
+}    
+header nav ul{
+    float: right;
+    position: relative;
+    bottom: -1px;
+}
+header nav ul li{
+    display: inline;
+    text-align: center;
+    margin-right: 5px;
+    cursor: pointer;
+    border: 1px dotted black;
+    padding: 3px;
+    border-radius: 1em;
+    background-color: black;
+}
+header nav ul li.selected, header nav ul li:hover{
+    color: black;
+    background-color: white;
+    border-color: white;
+    border-radius: 0;
+}
+header #logo{
+    cursor: pointer;
+    margin-top: 5px;
+    margin-left: 5px;
+    float: left;
+    display: inline;
+}
+header #logo h2{
+    font-size: 300%;
+    line-height: 0.3em;
+}
+header #logo h3{
+    font-size: 150%;
+    line-height: 0.5em;
+}
+main h3{
+    font-size: 500%;
+    text-align: center;
+}
+main .scroll-down{
+    display: block;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+}
+main h5{
+    text-align: center;
+    font-family: "fatalitys_edge", "Lucida Grande", sans-serif;
+    font-size: 40px;
+    color: white;        
+}
+main #home{
+    text-align: center;
+}
+main #home h2{
+    font-size: 1000%;
+}
+main #home h3{
+    position: relative;
+    font-size: 500%;
+    top: -100px;
+}
+main #selection h6{
+    text-align: center;
+    color: white;
+}
+main #home #introduction, main #printable #character-sheet{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 1em;
+    clear: left;
+}
+main #home #introduction{
+    position: relative;
+    top: -50px;
+}
+main #home #introduction p, main #printable #character-sheet p{
+    margin: 5px;
+    text-align: justify;
+}
+main #printable #character-sheet label{
+    font-size: 2em;
+}
+main #printable #character-sheet .textwrapleft{
+    float: left;
+    margin-right: 10px;
+}
+main #printable #character-sheet .textwrapright{
+    float: right;
+    margin: 10px
+}
+/* Fixed header and footer.
+ * --------------------------------------- */
+#header, #footer{
+    position:fixed;
+    height: 50px;
+    display:block;
+    width: 100%;
+    background: #333;
+    z-index:9;
+    text-align:center;
+    color: #f2f2f2;
+    padding: 20px 0 0 0;
+}
+#header{
+    top:0px;
+}
+#footer{
+    bottom:0px;
+}
+#footer #disclaimer{
+    font-size: 0.4em;
+}
+/* Book selector (also see jquery-anyslider.css)
+ * --------------------------------------- */
+.slider-wrapper .slider .slide-content{
+    float: left;
+    margin: 5px;
+}
+.slider-wrapper .slider .first{
+    margin-left:45px;
+}
+.slider-wrapper .slider .slide-content h4{
+    font-weight: bold;
+    font-size: 1.20em;
+    color: black;
+}
+.slider-wrapper .slider .slide-content p{
+    width: 450px;
+}
+.slider-wrapper .slider .slide-content li{
+    list-style: none;
+    font-weight: bold;
+}
+/* Tool-Tips
+ * --------------------------------------- */
+div.tooltip {
+	width: 25%;
+	padding: 5px;
+	background-color: #fff;
+	border: 2px solid red;
+	border-radius : 5px;
+    z-index: 100;
+}
+div.tooltip p {
+	color: black !important;	
+}
+/* Tabbed generator
+ * --------------------------------------- */
+.tabbedPanels{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.panelContainer{
+    background-color: white;
+    border: 1px solid black;
+    border-top-right-radius: 1em;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+    clear: left;
+}
+.tabs{
+    margin: 0;
+    padding: 0;
+    position: relative;
+    bottom: -1px;
+}
+.tabs li{
+    float: left;
+    list-style: none;
+}
+.tabs a{
+    color: white;
+    display: block;
+    text-decoration: none;
+    background-color: #333;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+    border: 1px solid black;
+    padding: 3px 5px;
+}
+.tabs a:hover {
+    color: #000;
+}
+.tabs a.active{
+    background-color: white;
+    border-bottom-color: white;
+    color: black;
+}
+.panel{
+    padding: 3px;
+    min-height: 200px;
+}
+.panel .attributes #reset{
+    position: relative;
+    bottom: 0px;
+    right: 0px;
+}
+.panel .clickable{
+    cursor: pointer;
+    border: 1px solid red;
+}
+.panel .attributes label{
+    cursor: default;
+}
+.panel .skills{
+    -webkit-column-count: 3; /* Chrome, Safari, Opera */
+    -moz-column-count: 3; /* Firefox */
+    column-count: 3;
+    -webkit-column-gap: 2px; /* Chrome, Safari, Opera */
+    -moz-column-gap: 2px; /* Firefox */
+    column-gap: 2px;
+}
+.panel .skills label{
+    display: inline;
+    vertical-align: middle;
+    width: 200px;
+    height: 25px;
+    cursor: default;
+}
+.panel .skills label input{
+    cursor: pointer;
+    float: right;
+    height: 20px;
+}
+.panel .skills .skillLine{
+    font-family: "Courier New", monospaced;
+}
+
+
+
+/* Media queries
+ * --------------------------------------- */
+@media screen and (max-width: 480px) {
+
+}
+/* Print styles
+ * --------------------------------------- */
+@media print {
+
+}

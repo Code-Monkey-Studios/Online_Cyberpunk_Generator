@@ -1,0 +1,425 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 ie-lt10 ie-lt9 ie-lt8 ie-lt7 no-js" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 ie-lt10 ie-lt9 ie-lt8 no-js" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 ie-lt10 ie-lt9 no-js" lang="en"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 ie-lt10 no-js" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. --> 
+
+<head>
+
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Cyberpunk 2020 2nd ed. - Online Character Generator</title>
+    <meta name="author" content="Scott Boyle" />
+    <meta name="description" content="This site is an online character for R.Talsorian Inc's Cyberpunk 2020 2nd ed." />
+    <!-- Don't forget to set your site up: http://google.com/webmasters -->
+    <meta name="google-site-verification" content="" />
+    <meta name="Copyright" content="Scott Boyle & R. Talsorian Inc." />
+
+    <!--  Mobile Viewport http://j.mp/mobileviewport & http://davidbcalhoun.com/2010/viewport-metatag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Used Iconifyer to generate all the favicons and touch icons ("Free Online Icon Generator." http://iconifier.net.) -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png" />
+
+    <!-- concatenate and minify for production -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="assets/css/print.css" media="print" />
+    
+    <!-- Lea Verou's Prefix Free, http://leaverou.github.io/prefixfree/ -->
+    <script src="assets/js/libs/prefixfree.min.js"></script>
+
+    <!-- This is an un-minified, complete version of Modernizr. Generate a custom build that only has the detects I need. -->
+    <script src="assets/js/libs/modernizr-2.7.1.dev.js"></script>
+</head>
+
+<body>
+<div class="wrapper">
+    <header id="header">
+        <div id="logo">
+            <h2>Cyberpunk</h2>
+            <h3>Online Character Generator</h3>
+        </div>
+        <nav>
+            <ul>
+                <li id="bs" class="navigation-buttons">  Book Select  </li>
+                <li id="gen" class="navigation-buttons">  Generator  </li>
+                <li id="pv" class="navigation-buttons">  Print Version  </li>
+            </ul>
+        </nav>
+    </header>
+    <main id="fullpage">
+        <section class="section" id="home">
+            <h2>Cyberpunk&trade;</h2>
+            <h3>Online Character Generator</h3>
+            <div id="introduction">
+            <p>Welcome to my <em>Cyberpunk 2020&trade; 2nd ed 0nline Character Generator</em>. This is written entirely in Javascript
+            &amp; jQuery. On the next page you will find a slider of books you may have or have access to, just scroll through and 
+            enable the books you'll be using and the generator will include them. the next page after that is the generator itself in 
+            a tabbed panel just work your way through the tabbed sections and at the end press the <strong>Generate Printable</strong> 
+            button if at anytime you are unhappy with your character just press the <strong>Reset</strong> button which will reset the 
+            generator and return you to this page. If you get lost there are plenty of tool tips to help you along the way. Scrolling 
+            to the next page will show you a printable version of your character if you are happy with your character you can, at this 
+            point, print it by pressing <strong>Generate Printable</strong> from the <strong>Equipment</strong> tab then selecting print 
+            from the file menu of your browser.
+            </p>
+            </div>
+            <h5>Scroll Down</h5>
+            <img class="scroll-down" src="assets/img/down.png" alt="scroll down arrow" /><!-- Marker Style Icons https://www.iconfinder.com/iconsets/markerstyle_icons -->
+        </section>
+        <section class="section" id="selection">
+            <h3>Choose books you have access to from the ones below.</h3>
+            <!-- Begin book chooser -->
+            <div class="slider-wrapper">
+                <div class="slider"><!-- replaced next and previous arrows with -> Marker Style Icons https://www.iconfinder.com/iconsets/markerstyle_icons -->
+                    <div>
+                        <div class="slide-content first">
+                            <img src="assets/img/cp2020.png" alt="Cyberpunk 2020 book cover" /> <!-- (Pondsmith, 1991) cover art by Doug Anderson -->
+                            <br />
+                            <input type="checkbox" name="enabled" id="cp2020_checkbox" value="value" checked />
+                            <label for="cp2020_checkbox">enabled</label>
+                        </div>
+                        <div class="slide-content">
+                            <h4>Cyberpunk&trade; 2020 2nd ed.</h4>
+                            <p>
+                                The corporations control the world from there skyscraper 
+                                fortresses, enforcing their rule with armies of cyborg assassins. 
+                                On the Street, Boostergangs roam a shattered urban 
+                                wilderness, killing and looting. The rest of the world is a 
+                                perpetual party, as fashion-model beautiful techies rub biosculpt 
+                                jobs with battle armored road warriors in the hottest 
+                                clubs, sleaziest bars and meanest streets this side of the 
+                                postholocaust. The Future never looked so bad.
+                            </p><!-- (Pondsmith, 1991) -->
+                            <br />
+                            <ul>
+                                <li>Core Rules</li>
+                                <li>Core Roles</li>
+                                <li>Core Skills</li>
+                                <li>Equipment, Vehicles, Drugs, and Programs</li>
+                                <li>Cybernetics</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="slide-content first">
+                            <img src="assets/img/nt.png" alt="Neo Tribes book cover" /><!-- (Winn & Oppen, 1995) cover art by Hector Gomez -->
+                            <br />
+                            <input type="checkbox" name="enabled" id="nt_checkbox" value="value" class="trigger" data-tooltip="#enablett" />
+                            <label for="nt_checkbox" class="trigger" data-tooltip="#enablett">enabled</label>
+                        </div>
+                        <div class="slide-content">
+                            <h4>Neo Tribes</h4>
+                            <p>
+                                In 2020s America, the urban sprawls that seem to stretch 
+                                on forever are dwarfed by vast expanses of open country,
+                                abandoned after the collapse. Areas once choked with 
+                                cities and humanity are now home only to lonely ribbons 
+                                of asphalt, coyotes, jackrabbits... And the Neotribes. The 
+                                Neotribes - Nomads who have given up life under 
+                                flourescent light and eating pre-pack, in exchange for 
+                                starlight and freedom and a life of riding the range, 
+                                living their own way.
+                            </p><!-- (Winn & Oppen, 1995) -->
+                            
+                            <ul>
+                                <li>Expanded Nomad Roles</li>
+                                <li>New Vehicles</li>
+                                <li>New Equipment</li>
+                                <li>New Weapons</li>
+                                <li>New Nomad Lifepath</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="slide-content first">
+                            <img src="assets/img/hotb.png" alt="" /><!-- (MacDonald, 1993) cover art by Doug Anderson -->
+                            <br />
+                            <input type="checkbox" name="enabled" id="hotb_checkbox" value="value" class="trigger" data-tooltip="#enablett" />
+                            <label for="hotb_checkbox" class="trigger" data-tooltip="#enablett">enabled</label>
+                        </div>
+                        <div class="slide-content">
+                            <h4>Home of the Brave</h4>
+                            <p>
+                                America's undergone flood, fire, and 
+                                famine in the last thirty years. Along 
+                                with martial law and one of the longest 
+                                guerrilla wars we've ever fought. There's 
+                                gangs on the streets, pollution in the air, 
+                                and the Corps looking down from above. 
+                                But when the Outside gets too nasty, we 
+                                still pull together and get the job done.
+                            </p><!-- (MacDonald, 1993) -->
+                            <br />
+                            <ul>
+                                <li>New Roles</li>
+                                <li>New Equipment</li>
+                                <li>New Weapons</li>
+                                <li>New Vehicles</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="slide-content first">
+                            <img src="assets/img/pr.png" alt="" /><!-- (Pasquarette, 1994) cover art by Hector Gomez -->
+                            <br />
+                            <input type="checkbox" name="enabled" id="pr_checkbox" value="value" class="trigger" data-tooltip="#enablett" />
+                            <label for="pr_checkbox" class="trigger" data-tooltip="#enablett">enabled</label>
+                        </div>
+                        <div class="slide-content">
+                            <h4>Pacific Rim</h4>
+                            <p>
+                                The Pacific Rim. The name Conjures up 
+                                images of high-tech glitterlands. Here 
+                                every dream can come true, realised 
+                                by tech-wizards of the orient. But 
+                                under the Westernized exterior lie traditions 
+                                thousands of years old, and 
+                                beneath the clean streets lurks a 
+                                shadow world more sinister than any 
+                                American sprawl.
+                            </p><!-- (Pasquarette, 1994) -->
+                            <br />
+                            <ul>
+                                <li>Expanded roles</li>
+                                <li>New Weapons</li>
+                                <li>New Equipment</li>
+                                <li>New Martial Arts</li>
+                                <li>New Lifepaths</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> <!-- end of slider -->
+            </div>
+            <h6>All text on this page from R. Talsorian Inc. books</h6>
+            <h5>Scroll Down</h5>
+            <img class="scroll-down" src="assets/img/down.png" alt="scroll down arrow" /><!-- Marker Style Icons https://www.iconfinder.com/iconsets/markerstyle_icons -->
+        </section>
+        <section class="section" id="generator">
+            <h3>Character Generator</h3>
+            <!-- The Generator block  a tabbed section with custom forms -->
+            <Section class="tabbedPanels"> <!-- tabs section (McFarland, 2012, pg307) -->
+                <ul id="gen_menu" class="tabs">
+                    <li><a href="#attributes">Attributes</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#lifepath">Lifepath</a></li>
+                    <li><a href="#equipment">Equipment</a></li>
+                </ul>
+                <section class="panelContainer">
+                    <section id="attributes" class="panel">
+                        <form class="attributes">
+                            <label for="handle">Handle: </label><input type="text" name="handle" id="handle" class="trigger" data-tooltip="#handlett" value="" size="20" />
+                            <label for="role">Role: </label>
+                            <select name="role" id="roles" class="trigger" data-tooltip="#roleTypes"></select>
+                            <label for="charPoints">Character Points: </label>
+                            <input class="trigger clickable" data-tooltip="#characterPoints" type="text" name="charPoints" id="charPoints" value="0" size="3" readonly />
+                            <input type="button" class="trigger" id="generate" value="Generate" data-tooltip="#generatett" />
+                            <select id="cinematic" name="cinematic" class="trigger" data-tooltip="#cinematicCP">
+                                <option value="0">Select Type</option>
+                                <option value="80">Major Hero</option>
+                                <option value="70">Major Supporting Char.</option>
+                                <option value="75">Minor Hero</option>
+                                <option value="60">Minor Supporting Char.</option>
+                                <option value="50">Average</option>
+                            </select>
+                            <br />
+                            <label>STATS</label>
+                            <br />
+                            <label for="int">INT [</label>
+                            <input class="clickable" data-tooltip="#attrib" type="text" name="int" id="int" value="0" size="2" readonly />
+                            <label for="ref">]  REF [</label>
+                            <input class="clickable" data-tooltip="#attrib" type="text" name="ref" id="ref" value="0" size="2" readonly />
+                            <label for="modref">/</label>
+                            <input type="text" name="modref" id="modref" value="0" size="2" readonly />
+                            <label for="tech">]  TECH [</label>
+                            <input class="clickable" data-tooltip="#attrib" type="text" name="tech" id="tech" value="0" size="2" readonly />
+                            <label for="cool">]  COOL [</label>
+                            <input class="clickable" data-tooltip="#attrib" type="text" name="cool" id="cool" value="0" size="2" readonly />
+                            <label>]</label>
+                            <br />
+                            <label for="attr">ATTR [</label>
+                            <input class="clickable" data-tooltip="#attrib" type="text" name="attr" id="attr" value="0" size="2" readonly />
+                            <label for="luck">]  LUCK [</label>
+                            <input class="clickable" data-tooltip="#attrib" type="text" name="luck" id="luck" value="0" size="2" readonly />
+                            <label for="ma">]  MA [</label>
+                            <input class="clickable" data-tooltip="#attrib" type="text" name="ma" id="ma" value="0" size="2" readonly />
+                            <label for="body">]  BODY [</label>
+                            <input class="clickable" data-tooltip="#attrib" type="text" name="body" id="body" value="0" size="2" readonly />
+                            <label>]</label>
+                            <br />
+                            <label for="emp">EMP [</label>
+                            <input class="clickable" data-tooltip="#attrib" type="text" name="emp" id="emp" value="0" size="2" readonly />
+                            <label for="modemp">/</label>
+                            <input type="text" name="modemp" id="modemp" value="0" size="2" readonly />
+                            <label for="run">]  Run [</label>
+                            <input type="text" name="run" id="run" value="0" size="2" readonly />
+                            <label for="leap">]  Leap [</label>
+                            <input type="text" name="leap" id="leap" value="0" size="2" readonly />
+                            <label for="lift">]  Lift [</label>
+                            <input type="text" name="lift" id="lift" value="0" size="2" readonly />
+                            <label>]</label>
+                            <input type="button" class="reset trigger" value="Reset" data-tooltip="#reset" />
+                        </form>
+                    </section> <!-- end attributes -->
+                    <section id="skills" class="panel">
+                        <label>SKILL POINTS</label>
+                        <br />
+                        <label for="career-points">Career Points: </label><input class="trigger clickable" type="text" name="career-points" id="cp" value="0" size="2" readonly data-tooltip="#cptt" />
+                        <label for="pickup-points">  Pickup Points: </label><input class="trigger clickable" type="text" name="pickup-points" id="pup" value="0" size="2" readonly data-tooltip="#puptt" />
+                        <label for="Available Pickup Skills">  Available Pickup Skills: </label>
+                        <select name="Available Pickup Skills" id="availPickupSkills" class="trigger" data-tooltip="#pupCombo">
+                        <input type="button" id="addSkill" value="Add" />
+                        <br />
+                        <label>CAREER SKILLS</label>
+                        <br />
+                        <form id="careerSkills" class="skills"></form>
+                        <br />
+                        <label>PICKUP SKILLS</label>
+                        <br />
+                        <form id="pickupSkills" class="skills"></form>
+                        <input type="button" class="reset trigger" value="Reset" data-tooltip="#reset" />
+                    </section> <!-- end skills -->
+                    <section id="lifepath" class="panel">
+                        <form class="lifepath">
+                            <label>STYLE</label>
+                            <input type="button" id="lpgenerate" class="trigger" value="Generate" data-tooltip="#generatelptt" />
+                            <input type="button" class="reset trigger" value="Reset" data-tooltip="#reset" /><br />
+                            <label>Clothes: </label><label id="clothes"></label><br />
+                            <label>Hair: </label><label id="hair"></label><br />
+                            <label>Affectations: </label><label id="affectations"></label><br />
+                            <label>Ethnicity: </label><label id="ethnicity"></label><br />
+                            <label>Language: </label><label id="language"></label><br />
+                            <label>FAMILY BACKGROUND</label><p id="fam-bg"></p>
+                            <label># SIBLINGS </label><label> M: </label><label id="male-siblings"></label><label> F: </label><label id="female-siblings"></label><br />
+                            <label>MOTIVATIONS</label><br />
+                            <label>Traits: </label><label id="traits"></label><br />
+                            <label>Valued Person: </label><label id="val-per"></label><br />
+                            <label>Feel About People: </label><label id="fap"></label><br />
+                            <label>Valued Posession: </label><label id="val-pos"></label><br />
+                            <label>LIFE EVENTS </label><label><small>One event for each year after age 16</small></label><br />
+                            <label>Year</label>                            
+                        </form>
+                    </section> <!-- end lifepath -->
+                    <section id="equipment" class="panel">
+                        <form class="equipment">
+                            <label for="credits">Credits: </label><input type="text" name="credits" class="trigger" data-tooltip="#credits" value="0" size="6" />
+                            <input type="button" class="reset trigger" value="Reset" data-tooltip="#reset" />
+                            <input type="button" id="print" class="trigger" value="Generate Prinable" data-tooltip="#printtt" />
+                        </form>
+                    </section> <!-- end equipment -->
+                </section><!-- end panel containers -->
+            </section><!-- end tabs -->
+            <!-- end Generator -->
+            <h5>Scroll Down</h5>
+            <img class="scroll-down" src="assets/img/down.png" alt="scroll down arrow" /><!-- Marker Style Icons https://www.iconfinder.com/iconsets/markerstyle_icons -->
+        </section>
+        <section class="section" id="printable">
+            <h3>Printable Version</h3>
+            <div id="character-sheet"></div>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <p>
+            <small>
+                &copy; Copyright <a href="mailto:sjboyle@gmail.com" title="Shoot me an email">Scott Boyle</a> 2014. All Rights Reserved.
+            </small>
+        </p>
+        <p id="disclaimer" class="trigger" data-tooltip="#disclamerText">
+            <small>
+                This website has been created as part of an assignment in an approved course of study for Curtin University and contains copyright
+                material not created by the author. All copyright material used remains copyright of the respective owners and has been used here
+                pursuant to Section 40 of the Copyright Act 1968 (Commonwealth of Australia). No part of this work may be reproduced without
+                consent of the original copyright owners. See code comments for references.
+            </small>
+        </p>
+    </footer>
+</div>
+
+<div class="tooltip" id="handlett">
+    <p>A handle is what your Punk is known as on the street.</p>
+</div>
+<div class="tooltip" id="roleTypes">
+    <p>Roles are character careers.</p>
+</div>
+<div class="tooltip" id="characterPoints">
+    <p>This is the amount of points you can spend on your characters attributes. Left-click to reset points.</p>
+</div>
+<div class="tooltip" id="cinematicCP">
+    <p>Consult your Referee about which Cinematic level they wist to use.</p>
+</div>
+<div class="tooltip" id="attrib">
+    <p>Left-click to increment by 1. Minimum 2, Maximum 10. Left-click Character Points to reset.</p>
+</div>
+<div class="tooltip" id="pupCombo">
+    <p>
+        Pickup Skills are those that your character has picked up in there travels and uses the Pickup points to the left. Mouse scroll-wheel 
+        can be a little problematic.
+    </p>
+</div>
+<div class="tooltip" id="disclamerText">
+    <p>
+        This website has been created as part of an assignment in an approved course of study for Curtin University and contains copyright
+        material not created by the author. All copyright material used remains copyright of the respective owners and has been used here
+        pursuant to Section 40 of the Copyright Act 1968 (Commonwealth of Australia). No part of this work may be reproduced without
+        consent of the original copyright owners. See code comments for references.
+    </p>
+</div>
+<div class="tooltip" id="reset">
+    <p>This will reset the entire generator and return you to the start page.</p>
+</div>
+<div class="tooltip" id="careerSkill">
+    <p>Left-click to increment by 1. Minimum 1, Maximum 10. Left-click Career Points to reset.</p>
+</div>
+<div class="tooltip" id="pickupSkill">
+    <p>Left-click to increment by 1. Minimum 1, Maximum 10. Left-click Pickup Points to reset.</p>
+</div>
+<div class="tooltip" id="cptt">
+    <p>This is the amount of points you can spend on your Career Skills. Left-click to reset points.</p>
+</div>
+<div class="tooltip" id="puptt">
+    <p>This is the amount of points you can spend on your Pickup Skills. Left-click to reset points.</p>
+</div>
+<div class="tooltip" id="printtt">
+    <p>This generates the next page, only click this when you are happy with your character. Although you can sill reset with the reset button.</p>
+</div>
+<div class="tooltip" id="generatett">
+    <p>This generates your stats in one of three ways. 1) rolls 9d10 and allows you to allocate points, 2) Rolls 1d10 for each stat re-rolling 1s, 3) allows you to choose from cinematic options.</p>
+</div>
+<div class="tooltip" id="enablett">
+    <p>Check this box if you own or have access to this book. Equally leave this unchecked if your Referee has said they are not using this book.</p>
+</div>
+<div class="tooltip" id="generatelptt">
+    <p>Click to generate Lifepath &amp; Style</p>
+</div>
+
+<!-- Grab Google CDN's jQuery. -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script>window.jQuery || document.write("<script src='assets/js/libs/jquery-1.11.0.min.js'>\x3C/script>")</script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+<script type="text/javascript" src="assets/js/libs/jquery.easing.min.1.3.js"></script>
+
+<script type="text/javascript" src="assets/js/libs/jquery.slimscroll.min.js"></script>
+<script type="text/javascript" src="assets/js/libs/jquery.fullpage.min.js"></script>
+
+<script type="text/javascript" src="assets/js/libs/jquery.anyslider.min.js"></script>
+
+<!-- this is where we put our custom functions -->
+<!-- don't forget to concatenate and minify if needed -->
+<script src="assets/js/functions.js"></script>
+
+</body>
+</html>
